@@ -10,5 +10,124 @@ export { code as theme } from 'mdx-deck/themes'
 
 ---
 
+### There are so many things to test
+#### On top of that, there are so many ways to test
+
+---
+
+### So..
+## What should we test?
+## How should we test?
+# 😟
+
+---
+
+### Some tips from experts
+
+---
+
+## Don't test the implementation details
+
+---
+
+<img src="https://i.imgur.com/bmbzz6h.png" />
+
+---
+
+#### Checkout this [blog](https://blog.kentcdodds.com/testing-implementation-details-ccb8d269586) for a couple of examples...
+
+---
+
+### In nutshell
+
+#### - The tests can break when you refactor application code.
+
+#### - The tests may not fail when you break application code.
+
+---
+
+### But, what is really meant by implementation details⁉️
+
+---
+
+### Implementation details are things which users of your code will not typically use, see, or even know about.
+
+---
+
+## Who are the users?
+- End-users and
+- Developers
+
+---
+
+### Great! 
+
+#### So what parts of our code do each of these users use, see, and know about?
+
+---
+
+#### The end user will see/interact with what we render in the render method. 
+
+#### The developer will see/interact with the props they pass to the component. 
+
+---
+
+### So, our test should typically only see/interact with the 
+
+#### - props that are passed, and the 
+
+#### - rendered output
+
+---
+
+#### The more your tests resemble the way your software is used, the more confidence they can give you. 
+
+---
+
+### How to know what to test⁉️
+#### (how to avoid testing the implementation details)
+
+---
+
+### The Process 
+#### (one of many)
+
+---
+
+#### 1. What part of your untested codebase would be really bad if it broke? 
+
+#### (The checkout process)
+
+---
+
+#### 2. Try to narrow it down to a unit or a few units of code 
+
+#### (When clicking the “checkout” button a request with the cart items is sent to /checkout)
+
+---
+
+#### 3. Look at that code and consider who the “users” are 
+
+#### (The developer rendering the checkout form, the end user clicking on the button)
+
+---
+
+#### 4. Write down a list of instructions for that user to manually test that code to make sure it’s not broken. 
+
+#### (render the form with some fake data in the cart, click the checkout button, ensure the mocked /checkout API was called with the right data, respond with a fake successful response, make sure the success message is displayed).
+
+---
+
+#### 5. Turn that list of instructions into an automated test.
+
+---
+
+### Useful Tip
+
+#### 100% code coverage is far from equal to 100% feature coverage.
+#### The value is in the features, not the code 🤑
+
+---
+
 # The End
 # 🍻🍷
