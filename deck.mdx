@@ -26,7 +26,8 @@ export { code as theme } from 'mdx-deck/themes'
 
 ---
 
-## Don't test the implementation details
+## 1. 
+### Don't test the implementation details
 
 ---
 
@@ -126,6 +127,37 @@ export { code as theme } from 'mdx-deck/themes'
 
 #### 100% code coverage is far from equal to 100% feature coverage.
 #### The value is in the features, not the code 🤑
+
+---
+
+## 2.
+### Write tests. Not too many. Mostly integration.
+
+---
+
+### This [blog](https://blog.kentcdodds.com/write-tests-not-too-many-mostly-integration-5e8c7fff591c) explains the reasoning behind it...
+
+---
+
+### To summarize...
+
+---
+
+#### End-to-end tests provide the greatest confidence. 
+
+#### If they weren’t so costly to write and slow to run we would use lots more end-to-end tests. 
+
+---
+
+#### Unit tests are less costly to write and faster to run but they test only a small part that might not even be critical. 
+
+---
+
+#### Integration tests lie somewhere between unit tests and end-to-end tests so they provide the best balance. Therefore, they have the highest ROI.
+
+---
+
+#### For more info, checkout this [blog](https://blog.usejournal.com/lean-testing-or-why-unit-tests-are-worse-than-you-think-b6500139a009)
 
 ---
 
